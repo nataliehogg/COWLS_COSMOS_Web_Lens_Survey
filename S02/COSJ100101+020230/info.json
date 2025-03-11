@@ -1,0 +1,21 @@
+{
+    "code": "COSJ100101+020230",
+    "ra": "150.25513489339482",
+    "dec": "2.041694120075668",
+    "score": "S02",
+    "ranking": "BBUUUX",
+    "primary_waveband": "F150W",
+    "mask_radius": 1.6,
+    "mask_radius_small": 1.6,
+    "visual_1_type": "B",
+    "data_field": "A4",
+    "catalogue_number": "107193",
+    "lens_spec_z": 1.0520000457763672,
+    "lens_spec_z_source": "COSMOS2015",
+    "lens_cw_photo_z_med": 1.1537,
+    "lens_cw_photo_z_L68": 1.0645,
+    "lens_cw_photo_U_L68": 1.16,
+    "lens_cw_stmass_med": 9.85014,
+    "lens_cw_stmass_L68": 9.8159,
+    "lens_cw_stmass_U68": 9.9
+}
