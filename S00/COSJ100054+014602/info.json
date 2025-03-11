@@ -1,0 +1,21 @@
+{
+    "code": "COSJ100054+014602",
+    "ra": "150.22830144957695",
+    "dec": "1.7673077135311048",
+    "score": "S00",
+    "ranking": "UXXXXX",
+    "primary_waveband": "F150W",
+    "mask_radius": 1.5,
+    "mask_radius_small": 1.5,
+    "visual_1_type": "B",
+    "data_field": "A10",
+    "catalogue_number": "286828",
+    "lens_spec_z": 0.3498865664005279,
+    "lens_spec_z_source": "DESI-SV3-LRG",
+    "lens_cw_photo_z_med": 0.3356,
+    "lens_cw_photo_z_L68": 0.33,
+    "lens_cw_photo_U_L68": 0.3579,
+    "lens_cw_stmass_med": 10.45,
+    "lens_cw_stmass_L68": 10.416,
+    "lens_cw_stmass_U68": 10.5
+}
