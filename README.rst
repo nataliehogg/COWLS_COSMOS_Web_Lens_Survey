@@ -2,7 +2,10 @@ The COSMOS-Web Lens Survey (COWLS)
 ==================================
 
 This repository contains candidate strong lenses in the The COSMOS-Web Lens Survey (COWLS), found by the COSMOS-Web
-lensing Science Working Group.
+lensing Science Working Group:
+
+.. image:: https://github.com/Jammy2211/COWLS_COSMOS_Web_Lens_Survey/blob/main/cowls_ii_rgb.png?raw=true
+  :width: 900
 
 The sample is described and presented in the following three discovery papers:
 
