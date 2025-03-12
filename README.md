@@ -134,6 +134,14 @@ If you use COWLS data in your research, please cite the following papers:
 - **COWLS II:** Mahler et al. 2025.
 - **COWLS III:** Hogg et al. 2025.
 
+--
+
+## Found A JWST Lens?
+
+The COWLS papers make the point that COSMOS-Web is just 0.54 deg$^2$, a fraction of the total area of NIRCam imaging that has been taken 3 years into JWST's mission. 
+
+If you've found other strong lens candidates with JWST that you'd like to share with the community, please get in touch with COWLS team and we'll work to getting them up on this repository :).
+
 ---
 
 ## Science Goals
