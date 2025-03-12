@@ -42,6 +42,38 @@ Without spectroscopic source redshift confirmation, it is difficult to be absolu
 lenses. You will therefore need to think carefully about this when choosing candidates to work on, and if the aspect
 of scientific study you are interested in could help confirm the lensing nature of the candidate.
 
+Catalogue
+---------
+
+The file `catalogue.csv` summarises the properties of all 439 candidates, comprising the following columns:
+
+- `code`: The unique identifier for the candidate.
+- `score`: The score given to the candidate by the visual inspectors.
+- `ra`: The right ascension of the candidate.
+- `dec`: The declination of the candidate.
+
+The following quantities are only available for some candidates and come from COSMOS-Web archival SED fitting:
+
+- `lens_spec_z`: The spectroscopic redshift of the lens galaxy if available.
+- `lens_cw_photo_z_med`: The photometric redshift of the lens galaxy if available.
+- `lens_cw_stmass_med`: The stellar mass of the lens galaxy if available.
+
+The following quantities come from PyAutoLens (https://github.com/Jammy2211/PyAutoLens) lens modeling:
+
+- `einstein_radius`: The Einstein radius of the candidate.
+- `F115W_lens_magnitude_ab`: The F115W magnitude of the lens galaxy.
+- `F150W_lens_magnitude_ab`: The F150W magnitude of the lens galaxy.
+- `F277W_lens_magnitude_ab`: The F277W magnitude of the lens galaxy.
+- `F444W_lens_magnitude_ab`: The F444W magnitude of the lens galaxy.
+- `F115W_source_magnitude_ab`: The F115W magnitude of the delensed source galaxy (e.g. after correction for lensing magnification).
+- `F150W_source_magnitude_ab`: The F150W magnitude of the delensed source galaxy (e.g. after correction for lensing magnification).
+- `F277W_source_magnitude_ab`: The F277W magnitude of the delensed source galaxy (e.g. after correction for lensing magnification).
+- `F444W_source_magnitude_ab`: The F444W magnitude of the delensed source galaxy (e.g. after correction for lensing magnification).
+- `F115W_magnification`: The magnification of the source galaxy in the F115W band.
+- `F150W_magnification`: The magnification of the source galaxy in the F150W band.
+- `F277W_magnification`: The magnification of the source galaxy in the F277W band.
+- `F444W_magnification`: The magnification of the source galaxy in the F444W band.
+
 Public Data Release
 -------------------
 
@@ -49,7 +81,30 @@ Each folder of each candidate contains the following files:
 
 - `.fits` files containing the JWST imaging data, RMS noise map and PSF for all 4 wavebands (F115W, F150W, F277W, F444W).
 - `.png` files showing the data and results of lens modeling.
-- a `result` folder in each waveband containing the lens light model, lensed source model and a source reconstruction in the source plane.
+- `result` folder in each waveband containing the lens light model, lensed source model and a source reconstruction in the source plane.
+- `archive_space` folder containing high resolution space telescope COSMOS archive data for the candidate (HST F814W, and MIRI F777W when available).
+- `archive_ground` folder containing all other COSMOS archive data (HSc, IRAC, etc).
+- `primer` folder containing PRIMER data for all lenses where available (see below).
+
+Archival Data
+-------------
+
+The COSMOS survey has accquired a wealth of data in many wavebands, which is available in the `archive_space` and `archive_ground` folders of each candidate.
+
+Space and ground based data is separate, because space based data (HST F814W and MIRI F777W) is high enough resolution and S/N that the lensed source galaxy may be visible in the data, especially after lens modeling. Ground based data is lower resolution and S/N, meaning the sources are likely not visible, but the lens galaxy is, albeit detailed lens modeling must still be performed to confirm this is always the case.
+
+Archival data **is not geometrically aligned** to the JWST data, meaning they may have small astrometric offsets and rotations. Care must therefore be taken when combining data from different telescopes.
+
+The COWLS team are now working on modeling this archival data simultaneously with the COSMOS-Web JWST data, for example to measure source galaxy photometric redshifts and reconstructions at more wavelengths. This will be part of a future public data release, but feel free to contact the COWLS team now if you are interested in using already modeled forms of this data.
+
+PRIMER
+------
+
+The PRIMER survey is described here: https://primer-jwst.github.io
+
+In brief, it means that for a subset of lenses, there is 12 JWST wavebands of additional data available (F090W, F115W, F150W, F200W, F277W, F356W, F410M, F444W, F770W, F1800W, F125W, F160W, F606W), which is a pretty remarkable multi-wavelength dataset for lens modeling!
+
+The file `primer.csv` lists all candidates with PRIMER data, and the `primer` folder in each candidate contains the PRIMER data.
 
 Using COWLS?
 ------------
