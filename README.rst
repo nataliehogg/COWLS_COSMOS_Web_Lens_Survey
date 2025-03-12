@@ -42,6 +42,20 @@ Without spectroscopic source redshift confirmation, it is difficult to be absolu
 lenses. You will therefore need to think carefully about this when choosing candidates to work on, and if the aspect
 of scientific study you are interested in could help confirm the lensing nature of the candidate.
 
+Lens Modeling
+-------------
+
+The public data release includes many results and files producing by lens modeling using **PyAutoLens** (https://github.com/Jammy2211/PyAutoLens).
+
+Modeling has been performed by fitting a "primary" wavelength image (e.g. where the source is most clearly visible) and then
+using that mass model to reconstruct the source in all other wavebands.
+
+The following lens model is used:
+
+ - A Multi Gaussian Expansion (MGE) lens light model (see He et al 2024: https://arxiv.org/abs/2403.16253 ).
+ - An SIE with external shear mass model.
+ - A source galaxy reconstructed using an adaptive Voronoi mesh (see PyAutoLens docs).
+
 Catalogue
 ---------
 
@@ -74,35 +88,66 @@ The following quantities come from PyAutoLens (https://github.com/Jammy2211/PyAu
 - `F277W_magnification`: The magnification of the source galaxy in the F277W band.
 - `F444W_magnification`: The magnification of the source galaxy in the F444W band.
 
-Public Data Release
--------------------
+Individual Lens Data
+--------------------
 
-Each folder of each candidate contains the following files:
+Each folder of each candidate contains the following .png files:
 
-- `.fits` files containing the JWST imaging data, RMS noise map and PSF for all 4 wavebands (F115W, F150W, F277W, F444W).
-- `.png` files showing the data and results of lens modeling.
-- `result` folder in each waveband containing the lens light model, lensed source model and a source reconstruction in the source plane.
-- `archive_space` folder containing high resolution space telescope COSMOS archive data for the candidate (HST F814W, and MIRI F777W when available).
-- `archive_ground` folder containing all other COSMOS archive data (HSc, IRAC, etc).
-- `primer` folder containing PRIMER data for all lenses where available (see below).
+- `1_rgb_summary.png`: An RGB image source reconstruction and lens subtracted images (via **PyAutoLens**) of the JWST imaging data in all 4 wavebands (F115W, F150W, F277W, F444W).
+- `2_visual_first_round.jpeg`: The image used in the first round of visual inspection shown to inspectors to find the candidate.
+- `3_multi_wavelength_dataset.png`: The image, masked image, lensed subtracted image, S/N map and source S/N map of the lens.
+- `4_sie_fit.png`: The lens model lens light, lensed source light, source reconstruction and mass model convergence map inferred by PyAutoLens in all 4 wavebands (F115W, F150W, F277W, F444W).
+- `5_source_reconstruction.png`: The delensed source reconstruction using the adaptive Voronoi mesh in all 4 wavebands (F115W, F150W, F277W, F444W).
+- `6_rgb.png`: An RGB image of the candiiate strong lens.
+
+Each folder of each candidate contains four folders named after the JWST filters (`F115W`, `F150W`, `F277W`, `F444W`) containing the following .fits files:
+
+- `data.fits`: The JWST imaging data.
+- `noise_map.fits`: The RMS noise map of the JWST imaging data.
+- `psf.fits`: The PSF of the JWST imaging data.
+- `psf_71x71.fits`: The PSF of the JWST imaging data, but with a larger 71x71 pixel grid, which is useful for lens modeling.
+- `mask_extra_galaxies.fits`: A mask of extra galaxies in the JWST imaging data, which removes their light so they do not impact the lens modeling.
+
+It contains the following `.json` files:
+
+- `info.json`: Information and metadata about the candidate (e.g. ra, dec, lens redshift).
+- `results.json`: The results of the lens modeling performed by PyAutoLens (e.g. Einstein radius, lens magnitudes, source magnitudes, magnifications).
+- `positions.json` The (y,x) coordinates of the lensed source positions used in the lens modeling.
+
+They also contain a `result` folder containing the following .fits files:
+
+- `lens_light.fits`: The lens light model inferred by PyAutoLens for that waveband.
+- `source_light.fits`: The image-plane lensed source model inferred by PyAutoLens for that waveband.
+- `source_reconstruction.fits`: The source reconstruction in the source plane for that waveband, interpolated onto a uniform grid.
+- `source_reconstruction_noise_map.fits`: The noise map of the source reconstruction in the source plane for that waveband.
+- `sie_model.results`: The lens model inferred by PyAutoLens for that waveband.
 
 Archival Data
 -------------
 
-The COSMOS survey has accquired a wealth of data in many wavebands, which is available in the `archive_space` and `archive_ground` folders of each candidate.
+The COSMOS survey has accquired a wealth of data in many wavebands, which is available in the following two folders of each candidate:
+
+- `archive_space` high resolution space telescope COSMOS archive data for the candidate (HST F814W, and MIRI F777W when available).
+- `archive_ground` all other COSMOS archive data (HSc, IRAC, etc).
 
 Space and ground based data is separate, because space based data (HST F814W and MIRI F777W) is high enough resolution and S/N that the lensed source galaxy may be visible in the data, especially after lens modeling. Ground based data is lower resolution and S/N, meaning the sources are likely not visible, but the lens galaxy is, albeit detailed lens modeling must still be performed to confirm this is always the case.
 
-Archival data **is not geometrically aligned** to the JWST data, meaning they may have small astrometric offsets and rotations. Care must therefore be taken when combining data from different telescopes.
+Two issues should be noted currently:
 
-The COWLS team are now working on modeling this archival data simultaneously with the COSMOS-Web JWST data, for example to measure source galaxy photometric redshifts and reconstructions at more wavelengths. This will be part of a future public data release, but feel free to contact the COWLS team now if you are interested in using already modeled forms of this data.
+- **Geometrically Alignment**: archival data is rotated and shifted relative to the JWST data, meaning they may have small astrometric offsets and rotations. Care must therefore be taken when combining data from different telescopes.
+- **RMS Noise Map Calculation**: Each archival dataset's `noise_map.fits` file is in units specific to the instrument and requires conversion to RMS noise values.
+- **Pixel To Arcsecond Conversion**: The pixel scale of archival data varies for each instrument, meaning the pixel scale must be loaded via the .fits header.
+
+The COWLS team are working on providing Python scripts which compute the RMS noise maps and pixel scales for each archival dataset, however currently they are not available. If you write scripts to do this, please consider sharing them with the COWLS team so we can get them on this repo!
+
+The COWLS team will soon begin modeling this archival data simultaneously with the COSMOS-Web JWST data, for example to measure source galaxy photometric redshifts and reconstructions at more wavelengths. This will be part of a future public data release, but again please contact the COWLS team now if you are interested in contributing!
 
 PRIMER
 ------
 
 The PRIMER survey is described here: https://primer-jwst.github.io
 
-In brief, it means that for a subset of lenses, there is 12 JWST wavebands of additional data available (F090W, F115W, F150W, F200W, F277W, F356W, F410M, F444W, F770W, F1800W, F125W, F160W, F606W), which is a pretty remarkable multi-wavelength dataset for lens modeling!
+In brief, it means that for a subset of lenses, there is many extra depp JWST and HST wavebands of additional data available (F090W, F115W, F150W, F200W, F277W, F356W, F410M, F444W, F770W, F1800W, F125W, F160W, F606W), which is a pretty remarkable multi-wavelength dataset for lens modeling!
 
 The file `primer.csv` lists all candidates with PRIMER data, and the `primer` folder in each candidate contains the PRIMER data.
 
