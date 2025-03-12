@@ -1,0 +1,21 @@
+{
+    "code": "COSJ095955+015520",
+    "ra": "149.98052531194938",
+    "dec": "1.9223152209002163",
+    "score": "S03",
+    "ranking": "BBBUXX",
+    "primary_waveband": "F150W",
+    "mask_radius": 1.6,
+    "mask_radius_small": 1.6,
+    "visual_1_type": "B",
+    "data_field": "A8",
+    "catalogue_number": "231668",
+    "lens_spec_z": -99.0,
+    "lens_spec_z_source": "NA",
+    "lens_cw_photo_z_med": 1.1938,
+    "lens_cw_photo_z_L68": 1.1622,
+    "lens_cw_photo_U_L68": 1.2008,
+    "lens_cw_stmass_med": 9.78132,
+    "lens_cw_stmass_L68": 9.75,
+    "lens_cw_stmass_U68": 9.84986
+}
