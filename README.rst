@@ -52,9 +52,9 @@ using that mass model to reconstruct the source in all other wavebands.
 
 The following lens model is used:
 
- - A Multi Gaussian Expansion (MGE) lens light model (see He et al 2024: https://arxiv.org/abs/2403.16253 ).
- - An SIE with external shear mass model.
- - A source galaxy reconstructed using an adaptive Voronoi mesh (see PyAutoLens docs).
+- A Multi Gaussian Expansion (MGE) lens light model (see He et al 2024: https://arxiv.org/abs/2403.16253 ).
+- An SIE with external shear mass model.
+- A source galaxy reconstructed using an adaptive Voronoi mesh (see PyAutoLens docs).
 
 Catalogue
 ---------
