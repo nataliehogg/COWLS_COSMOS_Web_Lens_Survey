@@ -113,6 +113,12 @@ The COWLS team is working on providing scripts for noise map calculation and pix
 
 The PRIMER survey (https://primer-jwst.github.io) provides additional deep JWST and HST wavebands for a subset of lenses. The file `primer.csv` lists these candidates, and the `primer` folder in each candidate's directory contains the corresponding data.
 
+If you use PRIMER data, please cite the following paper:
+
+Dunlop et al. 2021 and put  Dunlop J. S., et al., 2021, PRIMER: Public Release IMaging for Extragalactic Research, JWST Proposal. Cycle 1, ID. #1837
+
+An official PRIMER data release paper is anticipated in 2025, so please check if that is live and also cite that if it is.
+
 ---
 
 ## Using COWLS Data
