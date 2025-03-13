@@ -218,7 +218,7 @@ For the MGE lens light and Voronoi source reconstruction, refer to the papers an
 
 The magnitudes of the lens and source galaxies are calculated in AB magnitudes:
 
-$$M_{\text{lens}} = 2.5 \times \log_{10}(\text{total\_lens\_flux}) + \text{zero\_point}$$
+$$M_{\text{lens}} = 2.5 \times \log_{10}(F\_{lens}) + Z$$
 
 $$M_{\text{source}} = 2.5 \times \log_{10}(\text{total\_source\_flux}) + \text{zero\_point}$$
 
