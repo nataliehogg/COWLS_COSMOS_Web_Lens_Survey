@@ -231,11 +231,3 @@ $$\mu = \frac{F\_{source, image-plane}}{F\_{source}}$$
 where $F\_{source,image-plane}$ is the total flux of the lensed source galaxy in the image-plane (e.g. it is magnified by the lens galaxy).
 
 The `zero_point` corresponds to the calibration of the data.
-
-### Sersic
-
-Results for a Sersic lens light model are also provided, which is given as:
-
-$$I(\xi) = I_{\text{eff}} \exp\left(-b_n \left[ \left( \frac{\xi}{R_{\text{eff}}} \right)^{1/n} - 1 \right] \right)$$
-
-where $I_{\text{eff}}$ is the effective intensity, $R_{\text{eff}}$ is the effective radius, $n$ is the Sersic index, and $b_n$ is a constant that depends on $n$.
