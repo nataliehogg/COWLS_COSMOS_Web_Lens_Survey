@@ -226,7 +226,7 @@ where $F\_{lens}$ and $F\_{source}$ are the fluxes of the lens and source galaxi
 
 The magnification factor $\mu$ is defined as:
 
-$$\mu = \frac{F\_{source, image\_plane}}{F\_{source}}$$
+$$\mu = \frac{F\_{source, image-plane}}{F\_{source}}$$
 
 where $F\_{source,image\_plane}$ is the total flux of the lensed source galaxy in the image-plane (e.g. it is magnified by the lens galaxy).
 
