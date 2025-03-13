@@ -170,55 +170,39 @@ Lens modeling results involve several geometric quantities, defined as follows:
 
 To begin, a $(y,x)$ Cartesian coordinate system is established, centered on the light or mass profile:
 
-$$\[
-y_{shift} = y - y_{centre}, \quad x_{shift} = x - x_{centre}
-\]$$
+$$y_{shift} = y - y_{centre}, \quad x_{shift} = x - x_{centre}$$
 
 The shifted coordinates are then rotated by the position angle $\phi$, defined counter-clockwise from the positive x-axis:
 
-\[
-y_{rot} = y' \cos(\phi) - x' \sin(\phi), \quad x_{rot} = y' \sin(\phi) + x' \cos(\phi)
-\]
+$$y_{rot} = y' \cos(\phi) - x' \sin(\phi), \quad x_{rot} = y' \sin(\phi) + x' \cos(\phi)$$
 
 The rotated coordinates are converted to elliptical coordinates using the axis-ratio $q$ of the light or mass profile:
 
-\[
-\xi = \sqrt{(x_{rot})^2 + \frac{(y_{rot})^2}{q^2}}
-\]
+$$\xi = \sqrt{(x_{rot})^2 + \frac{(y_{rot})^2}{q^2}}$$
 
 Instead of defining geometry using $\phi$ and $q$, the following "elliptical components" are used:
 
-\[
-\epsilon_{1} = \frac{1 - q}{1 + q} \sin(2\phi), \quad \epsilon_{2} = \frac{1 - q}{1 + q} \cos(2\phi)
-\]
+$$\epsilon_{1} = \frac{1 - q}{1 + q} \sin(2\phi), \quad \epsilon_{2} = \frac{1 - q}{1 + q} \cos(2\phi)$$
 
 To convert between these components and the position angle / axis-ratio:
 
-\[
-q = \frac{1 - \text{fac}}{1 + \text{fac}}, \quad \phi = \frac{1}{2} \arctan\left(\frac{\epsilon_{2}}{\epsilon_{1}}\right)
-\]
+$$q = \frac{1 - \text{fac}}{1 + \text{fac}}, \quad \phi = \frac{1}{2} \arctan\left(\frac{\epsilon_{2}}{\epsilon_{1}}\right)$$
 
 where:
 
-\[
-\text{fac} = \sqrt{1 - \epsilon_{1}^2 - \epsilon_{2}^2}
-\]
+$$\text{fac} = \sqrt{1 - \epsilon_{1}^2 - \epsilon_{2}^2}$$
 
 # Mass Model
 
 The SIE lens mass model is defined by:
 
-\[
-\kappa(\xi) = \frac{1}{1 + q^{\text{mass}}} \left( \frac{\theta^{\text{mass}}_{\text{E}}}{\xi} \right)
-\]
+$$\kappa(\xi) = \frac{1}{1 + q^{\text{mass}}} \left( \frac{\theta^{\text{mass}}_{\text{E}}}{\xi} \right)$$
 
 where $\theta^{\text{mass}}_{\text{E}}$ is the Einstein radius of the mass model. Note that this is a scaled Einstein radius to improve modeling efficiency in PyAutoLens.
 
 The **effective** Einstein radius, $R_{\text{Ein,eff}}$, which is the definition of Einstein radius more commonly used in the literature, is defined as:
 
-\[
-R_{\text{Ein,eff}} = \sqrt{\frac{A}{\pi}}
-\]
+$$R_{\text{Ein,eff}} = \sqrt{\frac{A}{\pi}}$$
 
 where $A$ is the area enclosed by the tangential critical curve, ensuring consistency across various mass density profiles.
 
@@ -226,9 +210,7 @@ where $A$ is the area enclosed by the tangential critical curve, ensuring consis
 
 The external shear field is parameterized by two components $\gamma_{1}^{\text{ext}}$ and $\gamma_{2}^{\text{ext}}$. The magnitude and orientation are given by:
 
-\[
-\gamma^{\text{ext}} = \sqrt{(\gamma_{1}^{\text{ext}})^2 + (\gamma_{2}^{\text{ext}})^2}, \quad \tan(2\phi^{\text{ext}}) = \frac{\gamma_{2}^{\text{ext}}}{\gamma_{1}^{\text{ext}}}
-\]
+$$\gamma^{\text{ext}} = \sqrt{(\gamma_{1}^{\text{ext}})^2 + (\gamma_{2}^{\text{ext}})^2}, \quad \tan(2\phi^{\text{ext}}) = \frac{\gamma_{2}^{\text{ext}}}{\gamma_{1}^{\text{ext}}}$$
 
 # Magnitudes
 
@@ -238,20 +220,14 @@ The magnitudes of the lens and source galaxies are calculated in AB magnitudes:
 
 - **Lens Galaxy:**
 
-\[
-M_{\text{lens}} = 2.5 \times \log_{10}(\text{total\_lens\_flux}) + \text{zero\_point}
-\]
+$$M_{\text{lens}} = 2.5 \times \log_{10}(\text{total\_lens\_flux}) + \text{zero\_point}$$
 
 - **Source Galaxy:**
 
-\[
-M_{\text{source}} = 2.5 \times \log_{10}(\text{total\_source\_flux}) + \text{zero\_point}
-\]
+$$M_{\text{source}} = 2.5 \times \log_{10}(\text{total\_source\_flux}) + \text{zero\_point}$$
 
 - **Magnification:**
 
-\[
-\mu = \frac{\text{total\_lensed\_source\_flux}}{\text{total\_source\_flux}}
-\]
+$$\mu = \frac{\text{total\_lensed\_source\_flux}}{\text{total\_source\_flux}}$$
 
 The `zero_point` corresponds to the calibration of the data.
