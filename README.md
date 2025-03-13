@@ -8,7 +8,9 @@ This repository contains candidate strong lenses discovered by the COSMOS-Web Le
 
 The sample is described and presented in the following three discovery papers:
 
-(*insert link in future*)
+- COWLS I: https://arxiv.org/abs/2503.08777
+- COWLS II: https://arxiv.org/abs/2503.08782
+- COWLS III: https://arxiv.org/abs/2503.08785
 
 COWLS lens data consists of long-exposure, multi-band James Webb Space Telescope (JWST) images. This exquisite imaging data is well-suited for detailed lensing analysis.
 
@@ -130,9 +132,14 @@ If you are using COWLS data in your research, please contact the COSMOS-Web Lens
 ## Citation
 
 If you use COWLS data in your research, please cite the following papers:
+
 - **COWLS I:** Nightingale et al. 2025.
 - **COWLS II:** Mahler et al. 2025.
 - **COWLS III:** Hogg et al. 2025.
+
+The bibtex entry for the papers is here: https://github.com/Jammy2211/COWLS_COSMOS_Web_Lens_Survey/blob/main/CITATIONS.bib
+
+The papers are currently arxiv eprints and will be updated with the journal information once available.
 
 --
 
