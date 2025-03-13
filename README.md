@@ -164,7 +164,7 @@ The COSMOS-Web survey aims to achieve:
 
 ## Physical Quantities
 
-# Geometry
+### Geometry
 
 Lens modeling results involve several geometric quantities, defined as follows:
 
@@ -192,7 +192,7 @@ where:
 
 $$\text{fac} = \sqrt{1 - \epsilon_{1}^2 - \epsilon_{2}^2}$$
 
-# Mass Model
+### Mass Model
 
 The SIE lens mass model is defined by:
 
@@ -206,27 +206,23 @@ $$R_{\text{Ein,eff}} = \sqrt{\frac{A}{\pi}}$$
 
 where $A$ is the area enclosed by the tangential critical curve, ensuring consistency across various mass density profiles.
 
-# External Shear
+### External Shear
 
 The external shear field is parameterized by two components $\gamma_{1}^{\text{ext}}$ and $\gamma_{2}^{\text{ext}}$. The magnitude and orientation are given by:
 
 $$\gamma^{\text{ext}} = \sqrt{(\gamma_{1}^{\text{ext}})^2 + (\gamma_{2}^{\text{ext}})^2}, \quad \tan(2\phi^{\text{ext}}) = \frac{\gamma_{2}^{\text{ext}}}{\gamma_{1}^{\text{ext}}}$$
 
-# Magnitudes
+### Magnitudes
 
 For the MGE lens light and Voronoi source reconstruction, refer to the papers and PyAutoLens documentation for detailed descriptions of the profiles.
 
 The magnitudes of the lens and source galaxies are calculated in AB magnitudes:
 
-- **Lens Galaxy:**
-
 $$M_{\text{lens}} = 2.5 \times \log_{10}(\text{total\_lens\_flux}) + \text{zero\_point}$$
-
-- **Source Galaxy:**
 
 $$M_{\text{source}} = 2.5 \times \log_{10}(\text{total\_source\_flux}) + \text{zero\_point}$$
 
-- **Magnification:**
+The magnification factor $\mu$ is defined as:
 
 $$\mu = \frac{\text{total\_lensed\_source\_flux}}{\text{total\_source\_flux}}$$
 
