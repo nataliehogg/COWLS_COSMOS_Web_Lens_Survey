@@ -220,10 +220,14 @@ The magnitudes of the lens and source galaxies are calculated in AB magnitudes:
 
 $$M_{\text{lens}} = 2.5 \times \log_{10}(F\_{lens}) + Z$$
 
-$$M_{\text{source}} = 2.5 \times \log_{10}(\text{total\_source\_flux}) + \text{zero\_point}$$
+$$M_{\text{source}} = 2.5 \times \log_{10}(F\_{source}) + Z$$
+
+where $F\_{lens}$ and $F\_{source}$ are the fluxes of the lens and source galaxies, respectively, and $Z$ is the zero-point.
 
 The magnification factor $\mu$ is defined as:
 
-$$\mu = \frac{\text{total\_lensed\_source\_flux}}{\text{total\_source\_flux}}$$
+$$\mu = \frac{F\_{source, image\_plane}}{F\_{source}}$$
+
+where $F\_{source,image\_plane}$ is the total flux of the lensed source galaxy in the image-plane (e.g. it is magnified by the lens galaxy).
 
 The `zero_point` corresponds to the calibration of the data.
