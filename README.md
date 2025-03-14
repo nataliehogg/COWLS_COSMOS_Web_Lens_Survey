@@ -32,6 +32,17 @@ The remaining 419 candidates are organized into folders `S00` to `S12`, with fol
 
 **COWLS III** (Hogg et al. 2025) predicts that the COWLS sample contains approximately 100 strong lenses. Without spectroscopic source redshifts, confirming lens candidates can be challenging. When choosing candidates to work on, carefully consider how your analysis can confirm their lensing nature.
 
+## Quick Data Navigation
+
+Navigating the GitHub repository or folders storing data can be cumbersome and makes it difficult to finds the lenses you might be interested in.
+
+You can have the RGB + modeling summary image of all lenses appear in a single folder, `images/rgb_summary`, but running the following Python script:
+
+
+```python
+python make_rgb_summary.py
+```
+
 ---
 
 ## Lens Modeling
